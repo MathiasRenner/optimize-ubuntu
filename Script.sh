@@ -36,7 +36,10 @@ echo 'Installiere/Aktualisiere TeamViewer'
 sudo apt-get install teamViewer
 
 echo 'Installiere/Aktualisiere Firefox'
-sudo apt-get install teamViewer
+sudo apt-get install firefox
+
+echo 'Installiere/Aktualisiere Chromium'
+sudo apt-get install chromium
 
 echo 'Installiere Firefox Add-Ons'
 #http://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
