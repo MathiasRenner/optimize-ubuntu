@@ -1,5 +1,4 @@
 # Software-Optimierung für Ubuntu
-Für die Anwendung bei bestehenden oder neuen Installationen.
 
 ### Absprachen im Voraus:
 - Migration
@@ -26,27 +25,32 @@ Für die Anwendung bei bestehenden oder neuen Installationen.
 
 ### Software Säuberung
 
-- Überflüssige Programme deinstallieren
-- Pakete aufräumen sudo apt-get autoclean autoremove
-- Boot-Partition säubern
-- Install FSlint: sudo apt-get install fslint
-- Fixubuntu.com
+- Pakete automatisch aufräumen
+- Alte Kernel in Boot-Partition säubern
+- Installiere FSlint
+- In der Dash-Suche, deaktiviere Ergebnisse aus dem Internet
 - Pneumatisch entstauben und feucht reinigen
+- Überflüssige Programme manuell deinstallieren
 
 
 ### Software Update
 
-- sudo apt-get update && sudo apt-get upgrade
-- Java: sudo apt-get install default-jre, Version prüfen mit java -version
-- Adobe Flash Player inkl. Funktionstest: sudo apt-get install flashplugin-installer
-- Shutter für Screenshots intallieren
-- konfigurieren zum automatischen Speichern von Screentshots
+- Update aller installierten Anwendungen
+- Installiere/Aktualisiere:
+  - Adobe Flash Player
+  - Java
+  - Shutter für Screenshots intallieren
+  - Teamviewer
+  - Firefox
+- Konfiguriere Shutter für automatisches Speichern von Screentshots
 http://shutter-project.org/faq-help/set-shutter-as-the-default-screenshot-tool/#gnom
-- Teamviewer installieren, download bei Hersteller
-- Firefox
-- Firefox Add-Ons: Werbeblocker uBlock, Anti-Tracker PrivacyBadger & hostery, überflüssige Add-Ons entfernen, wie z.B. Ubuntu-spezifische Add-ons
+- Installiere Firefox Add-Ons
+  - Werbeblocker uBlock,
+  - Anti-Tracker PrivacyBadger & Ghostery
+- Firefox: überflüssige Add-Ons entfernen, wie z.B. Ubuntu-spezifische Add-ons
 - Einstellung setzen: Beim start leere Seite anzeigen, Startpage oder Ecosia als Suchmaschine anpassen und als Startseite setzen, Immer den privaten Modus verwenden, Cookies von Drittanbietern nie akzeptieren, keinerelei Passwörter speichern, (Erweitert → Datenübermittlung) Keine Daten senden
 - Install Clipboard Manager "CopyQ"
+- Teste Adobe Flash Player
 - Configure automatic updates
 
 
