@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# THIS SCRIPT HAS NOT BEEN TESTED - USE WITH CAUTION #
+
 ### Software Säuberung ###
 
 echo 'Pakete automatisch aufräumen'
