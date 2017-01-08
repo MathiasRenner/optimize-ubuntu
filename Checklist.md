@@ -28,7 +28,8 @@
 - Pakete automatisch aufräumen
 - Alte Kernel in Boot-Partition säubern
 - Installiere FSlint
-- In der Dash-Suche, deaktiviere Ergebnisse aus dem Internet
+- In der Dash-Suche, deaktiviere Ergebnisse aus dem Internet (sudo apt-get remove unity-lens-shopping)
+- In Systemeinstellungen, Senden von Berichten an Canonical unterbinden
 - Pneumatisch entstauben und feucht reinigen
 - Überflüssige Programme manuell deinstallieren
 
