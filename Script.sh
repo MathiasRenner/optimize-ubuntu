@@ -29,6 +29,8 @@ sudo apt-get update && sudo apt-get upgrade
 echo 'Installiere/Aktualisiere shutter'
 sudo apt-get install shutter
 
+# add shortcut with "shutter -f" und autom. speichern
+
 echo 'Installiere/Aktualisiere Adobe Flash Player'
 sudo apt-get install flashplugin-installer
 
