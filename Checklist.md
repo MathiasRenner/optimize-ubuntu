@@ -80,3 +80,7 @@ http://wiki.ubuntuusers.de/Defragmentierung
 - Neustarten, dabei BIOS-Einstellungen prüfen
 - Sicherung durchführen und prüfen
 - Gerät in Stand-by versetzen
+
+TODO
+
+- Firefox: Preferences -> Sicherheit. Beiden Haken enternen bei "Report unwanted software" (https://www.heise.de/newsticker/meldung/Firefox-40-warnt-vor-Malware-und-fehlenden-Add-on-Signaturen-2776879.html)
