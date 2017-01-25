@@ -14,7 +14,9 @@ echo 'Install FSlint'
 sudo apt-get install fslint
 
 echo 'In der Dash-Suche, deaktiviere Ergebnisse aus dem Internet'
-#http://askubuntu.com/questions/271408/how-to-hide-unity-dash-more-suggestions-not-unity-lens-shopping
+# Delete all webapps: https://askubuntu.com/questions/450398/how-to-remove-amazon
+sudo apt-get remove unity-webapps-common
+
 
 
 ### Software Update ###
