@@ -49,5 +49,9 @@ echo 'Installiere Firefox Add-Ons'
 #http://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
 
 
-
+# Required to play DVs
+# http://howtoubuntu.org/how-to-play-a-dvd-in-ubuntu
+# https://wiki.ubuntuusers.de/DVD-Wiedergabe/
+sudo apt-get install libdvdcss libdvdread4 libdvdnav4
+sudo dpkg-reconfigure libdvd-pkg 
 ### Optimierung der Einstellungen ###
