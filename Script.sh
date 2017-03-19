@@ -58,3 +58,8 @@ sudo dpkg-reconfigure libdvd-pkg
 
 echo 'Abschließend Pakete automatisch aufräumen'
 sudo apt-get autoclean autoremove
+
+
+#remove effects
+sudo apt-get install compizconfig-settings-manager
+# open it via `ccsm`, go to "effects" disable checkbox
