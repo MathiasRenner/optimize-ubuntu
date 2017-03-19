@@ -43,7 +43,7 @@ echo 'Installiere/Aktualisiere Firefox'
 sudo apt-get install -y firefox
 
 echo 'Installiere/Aktualisiere Chromium'
-sudo apt-get install -y chromium
+sudo apt-get install -y chromium-browser
 
 echo 'Installiere Firefox Add-Ons'
 #http://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
@@ -52,6 +52,9 @@ echo 'Installiere Firefox Add-Ons'
 # Required to play DVs
 # http://howtoubuntu.org/how-to-play-a-dvd-in-ubuntu
 # https://wiki.ubuntuusers.de/DVD-Wiedergabe/
-sudo apt-get install -y libdvdcss libdvdread4 libdvdnav4
+sudo apt-get install -y libdvdcss libdvdread4 libdvdnav4 libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg 
 ### Optimierung der Einstellungen ###
+
+echo 'Abschließend Pakete automatisch aufräumen'
+sudo apt-get autoclean autoremove
