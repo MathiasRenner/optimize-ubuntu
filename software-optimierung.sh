@@ -42,13 +42,13 @@ sudo apt-get install -y shutter
 # add shortcut with "shutter -f" und autom. speichern
 # http://shutter-project.org/faq-help/set-shutter-as-the-default-screenshot-tool/#gnom
 
-printf "\n----> Installiere/Aktualisiere Adobe Flash Player"
+printf "\n----> Installiere Adobe Flash Player"
 sudo apt-get install -y flashplugin-installer
 
-printf "\n----> Installiere/Aktualisiere TeamViewer"
+printf "\n----> Installiere TeamViewer"
 sudo apt-get install -y teamViewer
 
-printf "\n----> Installiere/Aktualisiere Clipboard Manager"
+printf "\n----> Installiere Clipboard Manager"
 sudo apt-get install -y copyq
 
 
