@@ -6,7 +6,7 @@ Die "Software-Optimierung" für Computer entspricht etwa dem TÜV beim Auto. Die
   - die Sicherheit und der Schutz der Privatsphäre maximiert wird,
   - Die Usability eines Computers maximiert wird, da z.B. alle notwendigen Anwendungen für möglichst alle Aufgaben des Nutzers installiert werden.
 
-Damit ist die Software-Optimierung an die Ziele von [Bitleaf - Sustainable IT Solutions](https://www.bitleaf.de).
+Damit setzt die Software-Optimierung die Grundwerte von [Bitleaf - Sustainable IT Solutions](https://www.bitleaf.de) um.
 
 Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Computern durchgeführt werden. Eine regelmäßige Anwendung wird empfohlen.
 
