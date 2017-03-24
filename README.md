@@ -30,7 +30,10 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 ### 3. Hardware ggf. pneumatisch entstauben und feucht reinigen
 
 
-### 4. Prüfung der Funktionalität
+### 4. Treiber prüfen und unnütze Software entfernen
+
+
+### 5. Prüfung der Funktionalität
 
 - Netzwerk: WLAN und Ethernet
 - USB-Slots
@@ -41,27 +44,26 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 - Funktionstasten
 
 
-### 5. Software Säuberung (automatisiert)
+### 6. Software Säuberung (automatisiert)
 
 - Ungenutze Software oder Plugins in Software entfernen
 - Cleanup Software installieren
 
 
-### 6. Software Update (automatisiert)
+### 7. Software Update (automatisiert)
 
 - Update aller installierten Anwendungen
 - Installiere/Aktualisiere sinnvolle Anwendungen (Browser, Java etc.) inkl. sinnvolle Browser Plugins,
 - Automatische Sicherheits- und Standard-Updates auf nicht-interaktiv setzen
 
 
-### 7. Optimierung der Einstellungen (automatisiert)
+### 8. Optimierung der Einstellungen (automatisiert)
 
 - Optimiere relevante Software-Einstellungen auf Geschwindigkeit, Sicherheit und Privatsphäre
 
 
-### 8. Abschließende Prüfung (manuell)
+### 9. Abschließende Prüfung (manuell)
 
-- Ggf. weitere, unnütze Software entfernen
 - Ggf. Cleanup software verwenden
 - Auflösung des Monitors anpassen
 - Energieoptionen optimieren
