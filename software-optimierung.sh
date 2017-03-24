@@ -70,6 +70,10 @@ printf "\n----> Installiere Firefox Add-Ons"
 sudo apt-get install -y libdvdcss libdvdread4 libdvdnav4 libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 
+printf "\n----> Installiere/Aktualisiere Preload"
+# Data about its advantage: http://www.hecticgeek.com/2013/05/using-preload-ubuntu-13-04/
+# Compare to package 'ureadahaed' that is installed by default https://wiki.ubuntuusers.de/Tuning/
+sudo apt-get install -y preload
 
 
 #################################################
