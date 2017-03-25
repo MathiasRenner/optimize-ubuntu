@@ -80,6 +80,29 @@ sudo apt-get install -y fslint
 ### Optimierung der Einstellungen (automatisiert)
 #################################################
 
+# Create keybinding for taking screenshots when pressing PRINT key 
+  # Create folder to save screenshots to
+mkdir $HOME/Screenshots
+
+  # Write screenshot command to file
+cat << EOM >> /usr/local/bin/take-screenshot
+"gnome-screenshot -f $HOME/Screenshots/Screenshot-$(date +%G-%m-%d--%H-%M-%S).png"
+EOM
+
+  # Make file executable
+chmod a+x /usr/local/bin/take-screenshot
+
+  # Install xbindkeys
+apt install -y xbindkeys
+
+  # Create keybinding of print-key to the take-screenshot "binary"
+cat << EOM >> /home/mac/.xbindkeysrc
+"bash /usr/local/bin/take-screenshot"
+Print
+EOM
+
+
+
 # firefox: Beim start leere Seite anzeigen, Startpage oder Ecosia als Suchmaschine anpassen und als Startseite setzen, Immer den privaten Modus verwenden, Cookies von Drittanbietern nie akzeptieren, keinerelei Passwörter speichern, (Erweitert → Datenübermittlung) Keine Daten senden
 
 # Automatische Sicherheits- und Standard-Updates auf nicht-interaktiv setzen
