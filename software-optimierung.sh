@@ -43,18 +43,15 @@ printf "\n----> Installiere Adobe Flash Player"
 sudo apt-get install -y flashplugin-installer
 
 printf "\n----> Installiere TeamViewer"
-sudo apt-get install -y teamViewer
-
+curl https://download.teamviewer.com/download/teamviewer_i386.deb | awk  -F '[<>]' -F '["]' ' {print $2}' | xargs curl -o /tmp/teamviewer.deb # parse download page and download .deb file
+sudo dpkg -i /tmp/teamviewer.deb
 
 printf "\n----> Installiere AnyDesk"
-curl -o /tmp/anydesk https://anydesk.com/platforms # temporalily get download page
-cat /tmp/anydesk | grep "Debian/Ubuntu/Mint &#40;64 Bit" | awk  -F '[<>]' -F '["]' ' {print $6}' | xargs curl -o anydesk.deb # parse download page and download .deb file
-sudo dpkg -i anydesk.deb # install deb package
-
+curl https://anydesk.com/platforms | grep "Debian/Ubuntu/Mint &#40;64 Bit" | awk  -F '[<>]' -F '["]' ' {print $6}' | xargs curl -o /tmp/anydesk.deb # parse download page and download .deb file
+sudo dpkg -i /tmp/anydesk.deb # install deb package
 
 printf "\n----> Installiere Clipboard Manager"
 sudo apt-get install -y copyq
-
 
 printf "\n----> Installiere/Aktualisiere Firefox"
 sudo apt-get install -y firefox
