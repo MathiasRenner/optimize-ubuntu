@@ -16,9 +16,6 @@ sudo apt-get autoclean autoremove
 printf "\n----> Alte Kernel in Boot-Partition säubern"
 sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
 
-printf "\n----> Install FSlint"
-sudo apt-get install -y fslint
-
 printf "\n----> Online-Ergebnisse in Dash-Suche deaktivieren (u.a. Amazon)"
 # https://askubuntu.com/questions/450398/how-to-remove-amazon
 sudo apt-get remove -y unity-webapps-common
@@ -74,6 +71,9 @@ printf "\n----> Installiere/Aktualisiere Preload"
 # Data about its advantage: http://www.hecticgeek.com/2013/05/using-preload-ubuntu-13-04/
 # Compare to package 'ureadahaed' that is installed by default https://wiki.ubuntuusers.de/Tuning/
 sudo apt-get install -y preload
+
+printf "\n----> Install FSlint"
+sudo apt-get install -y fslint
 
 
 #################################################
