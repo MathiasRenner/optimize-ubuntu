@@ -45,6 +45,13 @@ sudo apt-get install -y flashplugin-installer
 printf "\n----> Installiere TeamViewer"
 sudo apt-get install -y teamViewer
 
+
+printf "\n----> Installiere AnyDesk"
+curl -o /tmp/anydesk https://anydesk.com/platforms # temporalily get download page
+cat /tmp/anydesk | grep "Debian/Ubuntu/Mint &#40;64 Bit" | awk  -F '[<>]' -F '["]' ' {print $6}' | xargs curl -o anydesk.deb # parse download page and download .deb file
+sudo dpkg -i anydesk.deb # install deb package
+
+
 printf "\n----> Installiere Clipboard Manager"
 sudo apt-get install -y copyq
 
