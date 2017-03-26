@@ -43,9 +43,14 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 - CD-Laufwerk
 - Funktionstasten
 
+</br>
+
+> #### *Die nachfolgenden 3 Schritte können mit folgendem Befehl automatisiert werden:*
+>  ```
+>  https://raw.githubusercontent.com/MathiasRenner/Software-Optimierung-Ubuntu/master/automatic-tasks.sh | bash
+>  ```
 
 ### 6. Software Säuberung (automatisiert)
-
 - Ungenutze Software oder Plugins in Software entfernen
 - Cleanup Software installieren
 
