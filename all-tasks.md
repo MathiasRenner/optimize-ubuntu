@@ -34,7 +34,7 @@
 
 > #### *The following 3 steps can be automated with this command:*
 >  ```
->  https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/automatic-tasks.sh | bash
+>  https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/automated-tasks.sh | bash
 >  ```
 
 
