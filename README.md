@@ -1,4 +1,4 @@
-# Software-Optimierung für Ubuntu
+# Software-Optimierung für Ubuntu (alpha)
 
 Die "Software-Optimierung" für Computer entspricht etwa dem TÜV beim Auto. Die Software von Computern kann damit so optimiert werden kann, dass
 
@@ -10,6 +10,9 @@ Damit setzt die Software-Optimierung die Grundwerte von [Bitleaf - Sustainable I
 
 Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Computern durchgeführt werden. Eine regelmäßige Anwendung wird empfohlen.
 
+## Unterstütze Ubuntu-Versionen
+
+  - Ubuntu 16.04 LTS
 
 ## Ablauf
 
