@@ -6,9 +6,10 @@
 set -e
 
 
-#################################################
-### Software Säuberung (automatisiert)
-#################################################
+echo -e "\e[0m\n\n#################################################"
+echo -e "### Software Säuberung (automatisiert)"
+echo -e "#################################################\n\e[32m"
+
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Cleanup Pakete automatisch aufräumen\n\e[32m"
@@ -29,9 +30,10 @@ echo -e "----> Online-Ergebnisse in Dash-Suche deaktivieren (u.a. Amazon)\n\e[32
 sudo apt remove -y unity-webapps-common
 
 
-#################################################
-### Software Update (automatisiert)
-#################################################
+echo -e "\e[0m\n\n#################################################"
+echo -e "### Software Update (automatisiert)"
+echo -e "#################################################\n\e[32m"
+
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Update aller installierten Anwendungen\n\e[32m"
@@ -165,6 +167,13 @@ echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install FSlint\n\e[32m"
 
 sudo apt install -y fslint
+
+
+echo -e "\e[0m\n\n**************************************************"
+echo -e "----> Install compizconfig-settings-manager\n\e[32m"
+sudo apt install compizconfig-settings-manager
+# open it via `ccsm`, go to "effects" and disable checkbox
+
 
 
 echo -e "\e[0m\n\n#################################################"
@@ -314,9 +323,10 @@ sudo apt autoclean autoremove
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Remove animations\n\e[32m"
-sudo apt install compizconfig-settings-manager
-# open it via `ccsm`, go to "effects" disable checkbox
+echo -e "----> Remove some animations\n\e[32m"
+sudo gsettings set org.compiz.animation:/org/compiz/profiles/unity/plugins/animation/ unminimize-effects [\'animation:None\']
+sudo gsettings set org.compiz.animation:/org/compiz/profiles/unity/plugins/animation/ minimize-effects [\'animation:None\']
+
 
 echo -e "\e[0m\n\nFinished.\e[32m"
 

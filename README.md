@@ -18,7 +18,7 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 
 ### 1. Absprachen im Voraus
 
-- Notwendigikeit einer Datenmigration?
+- Datenmigration nötig?
 - Benutzer und Login-Passwort abfragen
 - Verwendete Software abfragen
 - Sicherungsniveau: Festplatten-Verschlüsselung, Passwortspeicher, VPN, Browser Fingerprint etc.
@@ -64,6 +64,7 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 
 ### 9. Abschließende Prüfung (manuell)
 
+- Alle Animationen deaktivieren mit compizconfig-settings-manager
 - Ggf. Cleanup software verwenden
 - Ggf. Browser Plugins entfernen
 - Auflösung des Monitors anpassen
@@ -72,7 +73,6 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 - Druckereinstellungen prüfen
 - Adobe Flash Player testen
 - Benutzerkonten-Check
-- Ggf. Defragmentierung: „sudo e4defrag -c /“, wenn nötig, dann run „sudo e4defrag /“ http://wiki.ubuntuusers.de/Defragmentierung
 - Autostartobjekte prüfen
 - Verknüpfungen im Anwendungsmenü auf relevante Software reduzieren
 - Infobereich prüfen, Ggf. Sprachsymbol aus Menüleiste entfernen
