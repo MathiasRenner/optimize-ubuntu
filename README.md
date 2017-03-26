@@ -65,6 +65,7 @@ Die Software-Optimierung kann jederzeit auf neuen wie auch auf gebrauchten Compu
 ### 9. Abschließende Prüfung (manuell)
 
 - Ggf. Cleanup software verwenden
+- Ggf. Browser Plugins entfernen
 - Auflösung des Monitors anpassen
 - Energieoptionen optimieren
 - Netzwerkeinstellungen prüfen
