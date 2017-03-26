@@ -1,4 +1,6 @@
-# Optimize Ubuntu (alpha)
+# Optimize Ubuntu
+
+**THIS SOFTWARE IS NOT READY TO USE YET - ALPHA STATUS**
 
 This project optimizes Ubuntu against the following goals:
 
