@@ -11,14 +11,14 @@ set -e
 #################################################
 
 echo "----> Cleanup Pakete automatisch aufräumen"
-sudo apt-get autoclean autoremove
+sudo apt autoclean autoremove
 
 printf "\n----> Alte Kernel in Boot-Partition säubern"
-sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
+sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt -y purge
 
 printf "\n----> Online-Ergebnisse in Dash-Suche deaktivieren (u.a. Amazon)"
 # https://askubuntu.com/questions/450398/how-to-remove-amazon
-sudo apt-get remove -y unity-webapps-common
+sudo apt remove -y unity-webapps-common
 
 
 
@@ -27,20 +27,20 @@ sudo apt-get remove -y unity-webapps-common
 #################################################
 
 printf "\n----> Update aller installierten Anwendungen"
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt update && sudo apt upgrade -y
 
 printf "\n----> Installiere/Aktualisiere Java"
-sudo apt-get install -y default-jre
+sudo apt install -y default-jre
 # test mit java -version
 
 printf "\n----> Installiere/Aktualisiere shutter"
-sudo apt-get install -y shutter
+sudo apt install -y shutter
 
 # add shortcut with "shutter -f" und autom. speichern
 # http://shutter-project.org/faq-help/set-shutter-as-the-default-screenshot-tool/#gnom
 
 printf "\n----> Installiere Adobe Flash Player"
-sudo apt-get install -y flashplugin-installer
+sudo apt install -y flashplugin-installer
 
 printf "\n----> Installiere TeamViewer"
 curl https://download.teamviewer.com/download/teamviewer_i386.deb | awk  -F '[<>]' -F '["]' ' {print $2}' | xargs curl -o /tmp/teamviewer.deb # parse download page and download .deb file
@@ -51,15 +51,18 @@ curl https://anydesk.com/platforms | grep "Debian/Ubuntu/Mint &#40;64 Bit" | awk
 sudo dpkg -i /tmp/anydesk.deb # install deb package
 
 printf "\n----> Installiere Clipboard Manager"
-sudo apt-get install -y copyq
+sudo apt install -y copyq
 
 printf "\n----> Installiere/Aktualisiere Firefox"
-sudo apt-get install -y firefox
+sudo apt install -y firefox
 
 printf "\n----> Installiere/Aktualisiere Chromium"
-sudo apt-get install -y chromium-browser
+sudo apt install -y chromium-browser
 
 printf "\n----> Installiere Firefox Add-Ons"
+  # Install wget and curl as tools
+  sudo apt install -y wget curl
+
   # Install uBlock
 wget https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-607454-latest.xpi
 mv addon-607454-latest.xpi /tmp/uBlock0@raymondhill.net.xpi
@@ -114,10 +117,10 @@ sudo dpkg-reconfigure libdvd-pkg
 printf "\n----> Installiere/Aktualisiere Preload"
 # Data about its advantage: http://www.hecticgeek.com/2013/05/using-preload-ubuntu-13-04/
 # Compare to package 'ureadahaed' that is installed by default https://wiki.ubuntuusers.de/Tuning/
-sudo apt-get install -y preload
+sudo apt install -y preload
 
 printf "\n----> Install FSlint"
-sudo apt-get install -y fslint
+sudo apt install -y fslint
 
 
 #################################################
@@ -204,7 +207,7 @@ Unattended-Upgrade::InstallOnShutdown "false";
 //Unattended-Upgrade::MailOnlyOnError "true";
 
 // Do automatic removal of new unused dependencies after the upgrade
-// (equivalent to apt-get autoremove)
+// (equivalent to apt autoremove)
 Unattended-Upgrade::Remove-Unused-Dependencies "true";
 
 // Automatically reboot *WITHOUT CONFIRMATION*
@@ -221,29 +224,39 @@ Unattended-Upgrade::Remove-Unused-Dependencies "true";
 Acquire::http::Dl-Limit "1000";
 EOM
 
-
   # restart service
 /etc/init.d/unattended-upgrades restart
 
 
-# firefox: Beim start leere Seite anzeigen, Startpage oder Ecosia als Suchmaschine anpassen und als Startseite setzen, Immer den privaten Modus verwenden, Cookies von Drittanbietern nie akzeptieren, keinerelei Passwörter speichern, (Erweitert → Datenübermittlung) Keine Daten senden
+# firefox hardening
+cd ~/.mozilla/firefox/
+cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js
+
+  # Enable keyword search in browser URL
+sed -ie 's/user_pref("keyword.enabled",                                    false);/user_pref("keyword.enabled",                                    true);/g' user.js
+  # Don't use private browsing mode all the time
+sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
+
 
 
 # Bluethooth deaktivieren (/etc/bluetooth/main.conf, RememberPowered und InitiallyPowered →  false)
 sudo systemctl disable bluetooth
 sudo modprobe -r btusb
 echo "blacklist btusb #disable bluetooth" >> /etc/modprobe.d/blacklist.conf
-apt-get remove bluez* bluetooth
+apt remove bluez* bluetooth
 
 
-#In Systemeinstellungen, Senden von Berichten an Canonical unterbinden (setze Parameter auf "0" in /etc/default/apport)
+# Don't send usage data to Canonical
+dconf write /org/gnome/desktop/privacy/send-software-usage-stats false
+dconf write /org/gnome/desktop/privacy/report-technical-problem false
 
 
 printf "\n----> Abschließend Pakete automatisch aufräumen"
-sudo apt-get autoclean autoremove
+sudo apt autoclean autoremove
 
 #remove effects
-sudo apt-get install compizconfig-settings-manager
+sudo apt install compizconfig-settings-manager
 # open it via `ccsm`, go to "effects" disable checkbox
 
 printf "\n----> Finished.\n"
