@@ -68,7 +68,7 @@ printf "\n----> Installiere Firefox Add-Ons"
 # Required to play DVs
 # http://howtoubuntu.org/how-to-play-a-dvd-in-ubuntu
 # https://wiki.ubuntuusers.de/DVD-Wiedergabe/
-sudo apt-get install -y libdvdcss libdvdread4 libdvdnav4 libdvd-pkg
+sudo apt install -y libdvdcss libdvdread4 libdvdnav4 libdvd-pkg
 sudo dpkg-reconfigure libdvd-pkg
 
 printf "\n----> Installiere/Aktualisiere Preload"
