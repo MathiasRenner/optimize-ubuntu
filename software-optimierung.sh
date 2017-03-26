@@ -193,6 +193,12 @@ echo -e "#################################################\n\e[32m"
 
 
 echo -e "\e[0m\n\n**************************************************"
+echo -e "----> Show *all* apps in list of startup items\n\e[32m"
+
+sudo sed -i ‘s/NoDisplay=true/NoDisplay=false/g’ /etc/xdg/autostart/*.desktop
+echo "Done."
+
+echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Create keybinding for taking screenshots when pressing PRINT key\n\e[32m"
 
   # Create folder to save screenshots to
