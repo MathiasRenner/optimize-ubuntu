@@ -29,7 +29,7 @@ echo -e "#################################################\n\e[32m"
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Auto-cleanup packages \n\e[32m"
 
-sudo apt autoclean autoremove
+sudo apt autoremove -y
 
 
 echo -e "\e[0m\n\n**************************************************"
