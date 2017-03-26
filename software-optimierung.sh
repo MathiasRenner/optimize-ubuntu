@@ -229,8 +229,12 @@ EOM
 # firefox: Beim start leere Seite anzeigen, Startpage oder Ecosia als Suchmaschine anpassen und als Startseite setzen, Immer den privaten Modus verwenden, Cookies von Drittanbietern nie akzeptieren, keinerelei Passwörter speichern, (Erweitert → Datenübermittlung) Keine Daten senden
 
 
-
 # Bluethooth deaktivieren (/etc/bluetooth/main.conf, RememberPowered und InitiallyPowered →  false)
+sudo systemctl disable bluetooth
+sudo modprobe -r btusb
+echo "blacklist btusb #disable bluetooth" >> /etc/modprobe.d/blacklist.conf
+apt-get remove bluez* bluetooth
+
 
 #In Systemeinstellungen, Senden von Berichten an Canonical unterbinden (setze Parameter auf "0" in /etc/default/apport)
 
