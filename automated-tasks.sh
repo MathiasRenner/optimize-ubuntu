@@ -352,14 +352,18 @@ echo -e "----> Harden Firefox \n\e[32m"
 
   cd ~/.mozilla/firefox/
   cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
-  wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
 
-  # Enable keyword search in browser URL
-  sed -ie 's/user_pref("keyword.enabled",                                    false);/user_pref("keyword.enabled",                                    true);/g' user.js
+  if [ -f user.js ]; then
+     echo -e "\nFirefox is already hardened. Skipping..."
+  else
+    wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
 
-  # Don't use private browsing mode all the time
-  sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
+    # Enable keyword search in browser URL
+    sed -ie 's/user_pref("keyword.enabled",                                    false);/user_pref("keyword.enabled",                                    true);/g' user.js
 
+    # Don't use private browsing mode all the time
+    sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
+  fi
 
 #echo -e "\e[0m\n\n**************************************************"
 #echo -e "----> Disable Bluethooth\n\e[32m"
@@ -389,4 +393,4 @@ sudo gsettings set org.compiz.animation:/org/compiz/profiles/unity/plugins/anima
 sudo gsettings set org.compiz.animation:/org/compiz/profiles/unity/plugins/animation/ minimize-effects [\'animation:None\']
 echo "Done."
 
-echo -e "\e[0m\n\nFinished. Proceed with final manual checks.\e[32m"
+echo -e "\e[0m\n\nAll done.\n\e[32m"
