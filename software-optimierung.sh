@@ -60,10 +60,50 @@ printf "\n----> Installiere/Aktualisiere Chromium"
 sudo apt-get install -y chromium-browser
 
 printf "\n----> Installiere Firefox Add-Ons"
-# uBlock, PrivacyBadger
-#http://askubuntu.com/questions/73474/how-to-install-firefox-addon-from-command-line-in-scripts
+  # Install uBlock
+wget https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-607454-latest.xpi
+mv addon-607454-latest.xpi /tmp/uBlock0@raymondhill.net.xpi
+cd ~/.mozilla/firefox/
+cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+cd extensions/
+cp /tmp/uBlock0@raymondhill.net.xpi .
 
-#ggf. Plugins entfernen
+
+  # Install https-everywhere
+wget https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/addon-229918-latest.xpi
+mv addon-229918-latest.xpi /tmp/https-everywhere@eff.org.xpi
+cd ~/.mozilla/firefox/
+cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+cd extensions/
+cp /tmp/https-everywhere@eff.org.xpi .
+
+
+  # Install CanvasBlocker
+wget https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/addon-534930-latest.xpi
+mv addon-534930-latest.xpi /tmp/CanvasBlocker@kkapsner.de.xpi
+cd ~/.mozilla/firefox/
+cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+cd extensions/
+cp /tmp/CanvasBlocker@kkapsner.de.xpi .
+
+
+  # Install cookie-controller
+wget https://addons.mozilla.org/firefox/downloads/latest/cookie-controller/addon-334572-latest.xpi
+mv addon-334572-latest.xpi /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi
+cd ~/.mozilla/firefox/
+cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+cd extensions/
+cp /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi .
+
+
+  # Install privacy-settings
+wget https://addons.mozilla.org/firefox/downloads/latest/privacy-settings/addon-627512-latest.xpi
+mv addon-627512-latest.xpi /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi
+cd ~/.mozilla/firefox/
+cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+cd extensions/
+cp /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi .
+
 
 # Required to play DVs
 # http://howtoubuntu.org/how-to-play-a-dvd-in-ubuntu
@@ -84,7 +124,7 @@ sudo apt-get install -y fslint
 ### Optimierung der Einstellungen (automatisiert)
 #################################################
 
-# Create keybinding for taking screenshots when pressing PRINT key 
+# Create keybinding for taking screenshots when pressing PRINT key
   # Create folder to save screenshots to
 mkdir $HOME/Screenshots
 
@@ -104,7 +144,6 @@ cat << EOM >> /home/mac/.xbindkeysrc
 "bash /usr/local/bin/take-screenshot"
 Print
 EOM
-
 
 
 # firefox: Beim start leere Seite anzeigen, Startpage oder Ecosia als Suchmaschine anpassen und als Startseite setzen, Immer den privaten Modus verwenden, Cookies von Drittanbietern nie akzeptieren, keinerelei Passwörter speichern, (Erweitert → Datenübermittlung) Keine Daten senden
