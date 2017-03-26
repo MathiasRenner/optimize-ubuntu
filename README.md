@@ -2,13 +2,13 @@
 
 This project optimizes Ubuntu against the following goals:
 
-  - Maximize usability by installing apps that most users usually use every day
+  - Maximize usability by installing apps that most users require regularly
   - Maximize security and the user's privacy
-  - Recuce the probability of occurrence for errors in a long term
+  - Reduce the probability of occurrence for errors in a long term
  
 Thus, this project is based on the values of the [IT Service Bitleaf](https://www.bitleaf.de).
 
-To achieve these goals, this project contains a list of tasks (see below) that should be applied in the correct order. Some of the tasks can be automated. These tasks are to be applied regularly in order to keep Ubuntu safe and secure.
+To achieve these goals, this project contains a list of tasks (see below) that are to be applied on an Ubuntu installation. Some of the tasks can be automated. These automated tasks can be applied regularly in order to keep Ubuntu safe and secure in a long term.
 
 
 ## Supported Ubuntu-Versions
@@ -17,15 +17,15 @@ To achieve these goals, this project contains a list of tasks (see below) that s
 
 ## Tasks for Optimization
 
-**NB! If the tasks are not applied improperly, it can cause problems! Use at your own risk.**
+**NB! If the tasks are applied improperly, it can cause problems! Use at your own risk.**
 
 
 ### 1. Preparation
 
-- Data migration required?
-- Identify number of users and request their passwords (to be changed later)
-- Identify important software for user
-- Desired level of security: storage encryption, password manager, VPN, browser fingerprint etc.
+- Identify if any data migration is required
+- Identify number of users and request their passwords (passwords will be changed in the last task)
+- Identify important software to users
+- Identify desired level of security: storage encryption, password manager, VPN, browser fingerprint etc.
 
 
 ### 2. Create backup as RAW diskimage
@@ -34,7 +34,7 @@ To achieve these goals, this project contains a list of tasks (see below) that s
 ### 3. Clean hardware with air pressure
 
 
-### 4. Check drivers and delete unnecessary apps
+### 4. Check drivers and delete superfluous apps
 
 
 ### 5. Check functions
@@ -54,6 +54,7 @@ To achieve these goals, this project contains a list of tasks (see below) that s
 >  https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/automatic-tasks.sh | bash
 >  ```
 
+
 ### 6. Software cleanup (automated)
 - Remove superfluous apps or plugins
 - Install cleanup software
@@ -61,9 +62,9 @@ To achieve these goals, this project contains a list of tasks (see below) that s
 
 ### 7. Software update (automated)
 
-- Update aller installierten Anwendungen
-- Installiere/Aktualisiere sinnvolle Anwendungen (Browser, Java etc.) inkl. sinnvolle Browser Plugins,
-- Automatische Sicherheits- und Standard-Updates auf nicht-interaktiv setzen
+- Update installed apps
+- Install useful apps (browser, Java etc.) incl. useful browser plugins
+- Configure fully automated updates
 
 
 ### 8. Optimize settings (automated)
@@ -73,10 +74,10 @@ To achieve these goals, this project contains a list of tasks (see below) that s
 
 ### 9. Final checks (manuell)
 
-- Disable animations with compizconfig-settings-manager
-- (Optional) Apply cleanup software
-- Remove superfluous browser plugins
 - Optimize screen resolution
+- Disable animations with compizconfig-settings-manager
+- Optionally apply cleanup software
+- Remove superfluous browser plugins
 - Optimize energy settings
 - Check network settings
 - Check printer settings
@@ -85,5 +86,6 @@ To achieve these goals, this project contains a list of tasks (see below) that s
 - Check startup items
 - Create links to important apps in app menu and remove superfluous links
 - Check notifications, remove language support icon if not needed
+- Change passwords of user
 - Reboot and check BIOS settings
-- Run backup task, and check the backup
+- Run backup task, check the backup
