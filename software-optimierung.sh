@@ -7,49 +7,49 @@ set -e
 
 
 echo -e "\e[0m\n\n#################################################"
-echo -e "### Software Säuberung (automatisiert)"
+echo -e "### Software Cleanup (automated)"
 echo -e "#################################################\n\e[32m"
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Cleanup Pakete automatisch aufräumen\n\e[32m"
+echo -e "----> Auto-cleanup packages \n\e[32m"
 
 sudo apt autoclean autoremove
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Alte Kernel in Boot-Partition säubern\n\e[32m"
+echo -e "----> Cleanup old kernels \n\e[32m"
 
 sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt -y purge
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Online-Ergebnisse in Dash-Suche deaktivieren (u.a. Amazon)\n\e[32m"
+echo -e "----> Remove online search in dash (u.a. Amazon)\n\e[32m"
 
 # https://askubuntu.com/questions/450398/how-to-remove-amazon
 sudo apt remove -y unity-webapps-common
 
 
 echo -e "\e[0m\n\n#################################################"
-echo -e "### Software Update (automatisiert)"
+echo -e "### Software Update (automated)"
 echo -e "#################################################\n\e[32m"
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Update aller installierten Anwendungen\n\e[32m"
+echo -e "----> Update of installed apps \n\e[32m"
 
 sudo apt update && sudo apt upgrade -y
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere/Aktualisiere Java\n\e[32m"
+echo -e "----> Install/Update Java\n\e[32m"
 
 sudo apt install -y default-jre
 # test mit java -version
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere/Aktualisiere shutter\n\e[32m"
+echo -e "----> Install/Update shutter\n\e[32m"
 
 sudo apt install -y shutter
 
@@ -58,45 +58,45 @@ sudo apt install -y shutter
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere Adobe Flash Player\n\e[32m"
+echo -e "----> Install/Update Adobe Flash Player\n\e[32m"
 
 sudo apt install -y flashplugin-installer
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere TeamViewer\n\e[32m"
+echo -e "----> Install/Update TeamViewer\n\e[32m"
 
 curl https://download.teamviewer.com/download/teamviewer_i386.deb | awk  -F '[<>]' -F '["]' ' {print $2}' | xargs curl -o /tmp/teamviewer.deb # parse download page and download .deb file
 sudo dpkg -i /tmp/teamviewer.deb
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere AnyDesk\n\e[32m"
+echo -e "----> Install/Update AnyDesk\n\e[32m"
 
 curl https://anydesk.com/platforms | grep "Debian/Ubuntu/Mint &#40;64 Bit" | awk  -F '[<>]' -F '["]' ' {print $6}' | xargs curl -o /tmp/anydesk.deb # parse download page and download .deb file
 sudo dpkg -i /tmp/anydesk.deb # install deb package
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere Clipboard Manager\n\e[32m"
+echo -e "----> Install/Update Clipboard Manager\n\e[32m"
 
 sudo apt install -y copyq
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere/Aktualisiere Firefox\n\e[32m"
+echo -e "----> Install/Update Firefox\n\e[32m"
 
 sudo apt install -y firefox
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere/Aktualisiere Chromium\n\e[32m"
+echo -e "----> Install/Update Chromium\n\e[32m"
 
 sudo apt install -y chromium-browser
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere Firefox Add-Ons\n\e[32m"
+echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
 # Ideas from: https://www.kuketz-blog.de/jondofox-profil-nutzung-nicht-mehr-empfehlenswert/
 
 
@@ -158,7 +158,7 @@ echo -e "----> Installiere Firefox Add-Ons\n\e[32m"
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere Libs zum Abspielen von DVDs\n\e[32m"
+echo -e "----> Installiere libraries to play DVDs\n\e[32m"
 
 # http://howtoubuntu.org/how-to-play-a-dvd-in-ubuntu
 # https://wiki.ubuntuusers.de/DVD-Wiedergabe/
@@ -167,7 +167,7 @@ sudo dpkg-reconfigure libdvd-pkg
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Installiere/Aktualisiere Preload\n\e[32m"
+echo -e "----> Install/Update Preload\n\e[32m"
 
 # Data about its advantage: http://www.hecticgeek.com/2013/05/using-preload-ubuntu-13-04/
 # Compare to package 'ureadahaed' that is installed by default https://wiki.ubuntuusers.de/Tuning/
@@ -175,27 +175,27 @@ sudo apt install -y preload
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install FSlint\n\e[32m"
+echo -e "----> Install/Update FSlint\n\e[32m"
 
 sudo apt install -y fslint
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install compizconfig-settings-manager\n\e[32m"
+echo -e "----> Install/Update compizconfig-settings-manager\n\e[32m"
 sudo apt install compizconfig-settings-manager
 # open it via `ccsm`, go to "effects" and disable checkbox
 
 
 
 echo -e "\e[0m\n\n#################################################"
-echo -e "### Optimierung der Einstellungen (automatisiert)"
+echo -e "### Optimize settings (automated)"
 echo -e "#################################################\n\e[32m"
 
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Show *all* apps in list of startup items\n\e[32m"
 
-sudo sed -i ‘s/NoDisplay=true/NoDisplay=false/g’ /etc/xdg/autostart/*.desktop
+sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 echo "Done."
 
 echo -e "\e[0m\n\n**************************************************"
@@ -223,7 +223,7 @@ echo -e "----> Create keybinding for taking screenshots when pressing PRINT key\
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Automatische Sicherheits- und Standard-Updates auf nicht-interaktiv setzen\n\e[32m"
+echo -e "----> Configure automatic updates \n\e[32m"
 
   sudo apt install unattended-upgrades
 
@@ -304,7 +304,7 @@ echo -e "----> Automatische Sicherheits- und Standard-Updates auf nicht-interakt
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Harden Firefox\n\e[32m"
+echo -e "----> Harden Firefox \n\e[32m"
 
   cd ~/.mozilla/firefox/
   cd "$(ls -la --sort=time | grep default | awk -F ' ' '{print $9}')" # cd into most recently used profile
@@ -318,7 +318,7 @@ echo -e "----> Harden Firefox\n\e[32m"
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Bluethooth deaktivieren\n\e[32m"
+echo -e "----> Disable Bluethooth\n\e[32m"
 
 sudo systemctl disable bluetooth
 sudo modprobe -r btusb
@@ -327,14 +327,14 @@ apt remove bluez* bluetooth
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Don't send usage data to Canonical\n\e[32m"
+echo -e "----> Don't send usage statistics to Canonical \n\e[32m"
 
 dconf write /org/gnome/desktop/privacy/send-software-usage-stats false
 dconf write /org/gnome/desktop/privacy/report-technical-problem false
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Abschließend Pakete automatisch aufräumen\n\e[32m"
+echo -e "----> Finally cleanup packages \n\e[32m"
 
 sudo apt autoclean autoremove
 
@@ -345,6 +345,4 @@ sudo gsettings set org.compiz.animation:/org/compiz/profiles/unity/plugins/anima
 sudo gsettings set org.compiz.animation:/org/compiz/profiles/unity/plugins/animation/ minimize-effects [\'animation:None\']
 
 
-echo -e "\e[0m\n\nFinished.\e[32m"
-
-### Abschließende Prüfung (manuell)
+echo -e "\e[0m\n\nFinished. Proceed with final manual checks.\e[32m"
