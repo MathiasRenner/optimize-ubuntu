@@ -2,20 +2,22 @@
 
 **THIS SOFTWARE IS NOT READY TO USE YET - ALPHA STATUS**
 
-This project optimizes Ubuntu against the following goals:
+This project ships a script that optimizes Ubuntu against the following goals:
 
   - Maximize usability by installing apps that most users require regularly
   - Maximize security and the user's privacy
-  - Reduce the probability of occurrence for errors in a long term
+  - Minimize the occurrence of errors in a long term
 
-Thus, this project is based on the values of  [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de).
+These goals are based on the values of [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de).
 
 
 ## How to use
 
-To achieve the above-mentioned goals, this project contains a [list of tasks](https://github.com/bitleaf/optimize-ubuntu/blob/master/all-tasks.md) that are to be applied on an Ubuntu installation.
+Run this command: 
 
-Some of these tasks can be automated. The automated tasks can be applied regularly in order to keep Ubuntu safe and secure in a long term.
+```
+curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/automated-tasks.sh | bash
+```
 
 
 ## Supported Ubuntu-Versions
