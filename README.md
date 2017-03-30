@@ -16,7 +16,7 @@ These goals are based on the values of [Bitleaf – Sustainable IT Solutions](ht
 Run this command: 
 
 ```
-curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/automated-tasks.sh | bash
+curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu.sh | bash
 ```
 
 
