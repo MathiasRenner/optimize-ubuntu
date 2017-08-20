@@ -39,7 +39,7 @@ sudo apt autoremove -y
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Cleanup old kernels \n\e[32m"
 
-sudo dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt -y purge
+sudo dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | egrep '[0-9]+\.[0-9]+\.[0-9]+' | grep -v $(uname -r) | xargs sudo apt-get -y purge
 
 
 echo -e "\e[0m\n\n**************************************************"
