@@ -102,7 +102,7 @@ sudo dpkg -i /tmp/anydesk.deb # install deb package
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update Clipboard Manager\n\e[32m"
 
-sudo add-apt-repository ppa:hluk/copyq
+sudo add-apt-repository -y ppa:hluk/copyq
 sudo apt update
 sudo apt install -y copyq
 
