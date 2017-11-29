@@ -225,7 +225,7 @@ sudo apt install -y fslint
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update compizconfig-settings-manager\n\e[32m"
-sudo apt install compizconfig-settings-manager
+sudo apt install -y compizconfig-settings-manager
 # open it via `ccsm`, go to "effects" and disable checkbox
 
 
