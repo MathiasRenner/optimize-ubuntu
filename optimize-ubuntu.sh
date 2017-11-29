@@ -134,7 +134,7 @@ echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
     wget https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-607454-latest.xpi
     mv addon-607454-latest.xpi /tmp/uBlock0@raymondhill.net.xpi
     cd ~/.mozilla/firefox/
-    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
     mkdir -p extensions/
     cp /tmp/uBlock0@raymondhill.net.xpi extensions/
   fi
@@ -146,7 +146,7 @@ echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
     wget https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/addon-229918-latest.xpi
     mv addon-229918-latest.xpi /tmp/https-everywhere@eff.org.xpi
     cd ~/.mozilla/firefox/
-    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
     mkdir -p extensions/
     cp /tmp/https-everywhere@eff.org.xpi extensions/
   fi
@@ -158,7 +158,7 @@ echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
     wget https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/addon-534930-latest.xpi
     mv addon-534930-latest.xpi /tmp/CanvasBlocker@kkapsner.de.xpi
     cd ~/.mozilla/firefox/
-    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
     mkdir -p extensions
     cp /tmp/CanvasBlocker@kkapsner.de.xpi extensions/
   fi
@@ -170,7 +170,7 @@ echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
     wget https://addons.mozilla.org/firefox/downloads/latest/cookie-controller/addon-334572-latest.xpi
     mv addon-334572-latest.xpi /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi
     cd ~/.mozilla/firefox/
-    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
     mkdir -p extensions
     cp /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi extensions/
   fi
@@ -182,7 +182,7 @@ echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
     wget https://addons.mozilla.org/firefox/downloads/latest/privacy-settings/addon-627512-latest.xpi
     mv addon-627512-latest.xpi /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi
     cd ~/.mozilla/firefox/
-    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
     mkdir -p extensions
     cp /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi extensions/
   fi
@@ -194,7 +194,7 @@ echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
     wget -O addon-506646-latest.xpi https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/addon-506646-latest.xpi
     mv addon-506646-latest.xpi /tmp/jid1-MnnxcxisBPnSXQ@jetpack.xpi
     cd ~/.mozilla/firefox/
-    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
     mkdir -p extensions
     cp /tmp/jid1-MnnxcxisBPnSXQ@jetpack.xpi extensions/
   fi
