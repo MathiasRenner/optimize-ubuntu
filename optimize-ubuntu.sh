@@ -353,7 +353,7 @@ echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Harden Firefox \n\e[32m"
 
   cd ~/.mozilla/firefox/
-  cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}')" # cd into most recently used profile
+  cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
 
   if [ -f user.js ]; then
      echo -e "\nFirefox is already hardened. Skipping..."
