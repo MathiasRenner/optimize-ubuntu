@@ -98,9 +98,9 @@ sudo dpkg -i /tmp/teamviewer.deb
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update AnyDesk\n\e[32m"
 
-curl https://anydesk.com/platforms | grep "Debian/Ubuntu/Mint &#40;64 Bit" | awk  -F '[<>]' -F '["]' ' {print $6}' | xargs curl -o /tmp/anydesk.deb # parse download page and download .deb file
+sudo curl -o /tmp/anydesk https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb?_ga=2.93739741.1352613770.1523474415-1161678258.1523474415
 sudo dpkg -i /tmp/anydesk.deb # install deb package
-
+rm /tmp/anydesk.deb
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update Clipboard Manager\n\e[32m"
