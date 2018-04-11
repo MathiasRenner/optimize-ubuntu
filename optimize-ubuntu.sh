@@ -98,7 +98,7 @@ sudo dpkg -i /tmp/teamviewer.deb
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update AnyDesk\n\e[32m"
 
-sudo curl -o /tmp/anydesk https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb?_ga=2.93739741.1352613770.1523474415-1161678258.1523474415
+sudo curl -o /tmp/anydesk.deb https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb
 sudo dpkg -i /tmp/anydesk.deb # install deb package
 rm /tmp/anydesk.deb
 
