@@ -458,7 +458,7 @@ sudo apt autoclean autoremove
 echo -e "\e[0m\n\nAll done.\n"
 
 # Ask for configurations
-echo -e "Would you like to reboot? If yes, type 'y', otherwise 'n':"
+echo -e "Would you like to reboot? If yes, type 'y', otherwise 'n':\e[32m"
 read usersettingreboot
 
 if [[ $usersettingreboot == y ]]; then
