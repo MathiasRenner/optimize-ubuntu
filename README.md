@@ -1,7 +1,5 @@
 # Optimize Ubuntu
 
-**THIS SOFTWARE IS NOT READY TO USE YET - BETA STATUS**
-
 This project ships a script that optimizes Ubuntu against the following goals:
 
   - Maximize usability by installing apps that most users require regularly
@@ -10,7 +8,7 @@ This project ships a script that optimizes Ubuntu against the following goals:
 
 Thereby, the **usability of Ubuntu is NOT reduced.**
 
-These goals are based on the values of [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de).
+These goals are based on the values of [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de). See also this [blog post](https://bitleaf.de/2018/04/27/optimize-ubuntu-18-04-for-privacy-security-and-usability/) about the motivation about this tool. 
 
 The script is recommended to use on a regular base. It's configured to install **and** update your machine.
 
