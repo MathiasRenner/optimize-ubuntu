@@ -24,7 +24,7 @@ set -e
 echo "This script requires sudo privileges. You are asked to provide your user password."
 #[ "$UID" -eq 0 ] || gksudo bash "$0" "$@"
 
-# Ask for configurations
+# Ask user for configurations
 echo -e "Would you like to disable Bluetooth and remove all software components for bluetooth? If yes, type 'y', otherwise 'n':"
 read usersettingbluetooth
 
@@ -409,7 +409,7 @@ if [[ $usersettingbluetooth == y ]]; then
    sudo systemctl disable bluetooth
    sudo modprobe -r btusb
    echo "blacklist btusb #disable bluetooth" >> /etc/modprobe.d/blacklist.conf
-   sudo apt remove bluez* bluetooth
+   sudo apt remove -y bluez* bluetooth
    
 fi
 
@@ -426,13 +426,12 @@ echo -e "----> Finally cleanup packages \n\e[32m"
 sudo apt autoclean autoremove
 
 
-echo -e "\e[0m\n\nAll done.\n\e[32m"
+echo -e "\e[0m\n\nAll done.\n"
 
 # Ask for configurations
 echo -e "Would you like to reboot? If yes, type 'y', otherwise 'n':"
 read usersettingreboot
 
 if [[ $usersettingreboot == y ]]; then
-   echo -e "Rebooting..."
    sudo reboot
 fi
