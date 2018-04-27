@@ -13,15 +13,15 @@ These goals are based on the values of [Bitleaf – Sustainable IT Solutions](ht
 
 ## How to use
 
-For Ubuntu **18.04**, run this command: 
+For Ubuntu **18.04**, run these commands: 
 
 ```
-curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-18-04.sh | bash
+sudo apt install -y curl && curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-18-04.sh | bash
 ```
 
-For Ubuntu **<= 17.10**, run this command: 
+For Ubuntu **<= 17.10**, run these command: 
 ```
-curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
+sudo apt install -y curl && curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
 ```
 
 
