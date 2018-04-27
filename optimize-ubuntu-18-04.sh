@@ -61,7 +61,7 @@ echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Remove online search in dash (u.a. Amazon)\n\e[32m"
 
 # https://askubuntu.com/questions/192269/how-can-i-remove-amazon-search-results-from-the-dash-or-disable-the-feature
-sudo apt remove ubuntu-web-launchers
+sudo apt remove -y ubuntu-web-launchers
 
 
 echo -e "\e[0m\n\n**************************************************"
@@ -69,7 +69,7 @@ echo -e "----> Remove error reporting daemon\n\e[32m"
 
 # https://forum.ubuntuusers.de/topic/datenschutz-und-ubuntu/
 # This also disable error reporting in system settings
-sudo apt remove whoopsie
+sudo apt remove -y whoopsie
 
 
 echo -e "\e[0m\n\n#################################################"
@@ -97,7 +97,7 @@ sudo apt install -y default-jre
 
 
 echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install/Update shutter\n\e[32m"
+echo -e "----> Install/Update Shutter\n\e[32m"
 
 sudo apt install -y shutter
 
@@ -130,11 +130,11 @@ if [[ $usersettinganydesk == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
    echo -e "----> Install/Update AnyDesk\n\e[32m"
 
-   sudo curl -o /tmp/anydesk.deb https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb
+   sudo curl https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb -o /tmp/anydesk.deb 
 
    # Make this command always true to not stop the script
    #   error will be resolved with 'install -f' afterwards
-   sudo dpkg -i /tmp/anydesk.deb # install deb package || true
+   sudo dpkg -i /tmp/anydesk.deb || true # install deb package 
 
    # Fixes dependency error 
    sudo apt install -fy
