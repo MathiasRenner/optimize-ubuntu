@@ -13,7 +13,7 @@ These goals are based on the values of [Bitleaf – Sustainable IT Solutions](ht
 
 ## How to use
 
-For Ubuntu **18.04**, copy these commands into your terminal and run them: 
+For Ubuntu **18.04**, run the following commands: 
 
 ```
 sudo apt install -y curl 
