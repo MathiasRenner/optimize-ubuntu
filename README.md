@@ -1,6 +1,6 @@
 # Optimize Ubuntu
 
-**THIS SOFTWARE IS NOT READY TO USE YET - ALPHA STATUS**
+**THIS SOFTWARE IS NOT READY TO USE YET - BETA STATUS**
 
 This project ships a script that optimizes Ubuntu against the following goals:
 
@@ -8,7 +8,21 @@ This project ships a script that optimizes Ubuntu against the following goals:
   - Maximize security and the user's privacy
   - Minimize the occurrence of errors in a long term
 
+Thereby, the **usability of Ubuntu is NOT reduced.**
+
 These goals are based on the values of [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de).
+
+The script is recommended to use on a regular base. It's configured to install **and** update your machine.
+
+
+## What exactly does it do?
+- Removes unnecessary software, i.e. needless dependencies, old kernels
+- Updates your installed software
+- Installs useful tools, i.e. Java, Teamviewer, a clipboard manager, chromium browser
+- Increases privacy protection, i.e. removes amazon, restricts Ubuntu to send reports to Canonical, Inc.
+- Installs Firefox add-ons for better privacy protection and hardens Firefox
+
+The script takes about **5 Minutes** in total to finish all tasks.
 
 
 ## How to use
@@ -25,6 +39,8 @@ For Ubuntu **<= 17.10**, run this command:
 ```
 sudo apt install -y curl && curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
 ```
+
+
 
 
 ## License
