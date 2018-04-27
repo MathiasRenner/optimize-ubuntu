@@ -13,16 +13,16 @@ These goals are based on the values of [Bitleaf – Sustainable IT Solutions](ht
 
 ## How to use
 
-Run this command: 
+For Ubuntu **18.04**, run this command: 
 
 ```
-curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu.sh | bash
+curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-18-04.sh | bash
 ```
 
-
-## Supported Ubuntu-Versions
-
-  - Ubuntu 16.04 LTS
+For Ubuntu **<= 17.10**, run this command: 
+```
+curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
+```
 
 
 ## License
