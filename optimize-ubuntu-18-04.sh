@@ -243,17 +243,14 @@ if [[ $usersettingfirefoxharden == y ]]; then
    cd ~/.mozilla/firefox/
    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
 
-   if [ -f user.js ]; then
-     echo -e "\nFirefox is already hardened. Skipping..."
-   else
-    wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
+   rm user.js # delete existing user.js, to be updated next
+   wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
 
-    # Enable keyword search in browser URL
-    sed -ie 's/user_pref("keyword.enabled",                                    false);/user_pref("keyword.enabled",                                    true);/g' user.js
+   # Enable keyword search in browser URL
+   sed -ie 's/user_pref("keyword.enabled",                                    false);/user_pref("keyword.enabled",                                    true);/g' user.js
 
-    # Don't use private browsing mode all the time
-    sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
-   fi
+   # Don't use private browsing mode all the time
+   sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
 fi
   
 
