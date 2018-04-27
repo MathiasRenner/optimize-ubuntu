@@ -208,18 +208,6 @@ if [[ $usersettingfirefoxaddon == y ]]; then
      cp /tmp/CanvasBlocker@kkapsner.de.xpi extensions/
    fi
 
-   # Install cookie-controller
-   if [ -f /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi ]; then
-      echo -e "\nCookie-controller install file already exists. Skipping..."
-   else
-     wget https://addons.mozilla.org/firefox/downloads/latest/cookie-controller/addon-334572-latest.xpi
-     mv addon-334572-latest.xpi /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi
-     cd ~/.mozilla/firefox/
-     cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
-     mkdir -p extensions
-     cp /tmp/{ac2cfa60-bc96-11e0-962b-0800200c9a66}.xpi extensions/
-   fi
-
    # Install privacy-settings
    if [ -f /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi ]; then
       echo -e "\nPrivacy-settings install file already exists. Skipping..."
