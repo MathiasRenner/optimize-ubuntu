@@ -31,7 +31,7 @@ curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimiz
 
 The project is licensed unter the GPLv3.
 
-Copyright (C) 2017 Mathias Renner
+Copyright (C) Mathias Renner
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
