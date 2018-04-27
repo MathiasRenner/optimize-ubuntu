@@ -96,13 +96,15 @@ echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update TeamViewer\n\e[32m"
 
 # Fixes dependency error 
-sudo apt install -f
+sudo apt install -fy
 
+# Make this command always true to not stop the script
+#   error will be resolved with 'install -f' afterwards
 curl https://download.teamviewer.com/download/teamviewer_i386.deb | awk  -F '[<>]' -F '["]' ' {print $2}' | xargs curl -o /tmp/teamviewer.deb # parse download page and download .deb file
-sudo dpkg -i /tmp/teamviewer.deb
+sudo dpkg -i /tmp/teamviewer.deb || true
 
 # Fixes dependency error 
-sudo apt install -f
+sudo apt install -fy
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update AnyDesk\n\e[32m"
