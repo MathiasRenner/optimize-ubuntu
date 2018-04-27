@@ -25,7 +25,7 @@ set -e
 #[ "$UID" -eq 0 ] || gksudo bash "$0" "$@"
 
 # Ask user for configurations
-echo -e "\e[0mYou can control some of the tasks to be done.:\nWould you like to install Teamviewer? If yes, type 'y', otherwise 'n':\e[32m"
+echo -e "\e[0mYou can control some of the tasks to be done.\nWould you like to install Teamviewer? If yes, type 'y', otherwise 'n':\e[32m"
 read usersettingteamviewer
 
 echo -e "\e[0mWould you like to install Anydesk? If yes, type 'y', otherwise 'n':\e[32m"
@@ -455,7 +455,7 @@ echo -e "----> Finally cleanup packages \n\e[32m"
 sudo apt autoclean autoremove
 
 
-echo -e "\e[0m\n\nAll done.\n"
+echo -e "\e[0m\n\nAll done without errors.\n"
 
 # Ask for configurations
 echo -e "Would you like to reboot? If yes, type 'y', otherwise 'n':\e[32m"
