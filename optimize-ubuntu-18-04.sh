@@ -24,6 +24,11 @@ set -e
 echo "This script requires sudo privileges. You are asked to provide your user password."
 #[ "$UID" -eq 0 ] || gksudo bash "$0" "$@"
 
+# Ask for configurations
+echo -e "Would you like to disable Bluetooth and remove all software components for bluetooth? If yes, type 'y', otherwise 'n':"
+read usersettingbluetooth
+
+
 
 echo -e "\e[0m\n#################################################"
 echo -e "### Software Cleanup (automated)"
@@ -395,14 +400,18 @@ echo -e "----> Harden Firefox \n\e[32m"
     sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
   fi
 
-#echo -e "\e[0m\n\n**************************************************"
-#echo -e "----> Disable Bluethooth\n\e[32m"
+# Handle Bluetooth
+if [[ $usersettingbluetooth == y ]]; then
 
-#sudo systemctl disable bluetooth
-#sudo modprobe -r btusb
-#echo "blacklist btusb #disable bluetooth" >> /etc/modprobe.d/blacklist.conf
-#sudo apt remove bluez* bluetooth
+   echo -e "\e[0m\n\n**************************************************"
+   echo -e "----> Disable Bluethooth\n\e[32m"
 
+   sudo systemctl disable bluetooth
+   sudo modprobe -r btusb
+   echo "blacklist btusb #disable bluetooth" >> /etc/modprobe.d/blacklist.conf
+   sudo apt remove bluez* bluetooth
+   
+fi
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Don't send usage statistics to Canonical \n\e[32m"
@@ -417,4 +426,13 @@ echo -e "----> Finally cleanup packages \n\e[32m"
 sudo apt autoclean autoremove
 
 
-echo -e "\e[0m\n\nAll done. P\n\e[32m"
+echo -e "\e[0m\n\nAll done.\n\e[32m"
+
+# Ask for configurations
+echo -e "Would you like to reboot? If yes, type 'y', otherwise 'n':"
+read usersettingreboot
+
+if [[ $usersettingreboot == y ]]; then
+   echo -e "Rebooting..."
+   sudo reboot
+fi
