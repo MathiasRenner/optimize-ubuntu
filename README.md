@@ -18,7 +18,7 @@ For Ubuntu **18.04**, copy these commands into your terminal and run them:
 ```
 sudo apt install -y curl 
 sudo curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-18-04.sh -o /tmp/optim.sh
-sudo /tmp/optim.sh
+sudo bash /tmp/optim.sh
 ```
 
 For Ubuntu **<= 17.10**, run this command: 
