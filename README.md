@@ -1,4 +1,4 @@
-# Optimize Ubuntu
+# Optimize Ubuntu Desktop Edition
 
 This project ships a script that optimizes Ubuntu against the following goals:
 
