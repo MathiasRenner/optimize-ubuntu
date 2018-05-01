@@ -243,7 +243,12 @@ if [[ $usersettingfirefoxharden == y ]]; then
    cd ~/.mozilla/firefox/
    cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
 
-   rm user.js # delete existing user.js, to be updated next
+   if [ -f user.js ]; then
+      echo "User.js exists, deleting it..."
+      rm user.js # delete existing user.js, to be updated next
+   fi
+  
+   # Downloading user.js
    wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
 
    # Enable keyword search in browser URL
