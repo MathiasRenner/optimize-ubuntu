@@ -25,11 +25,23 @@ set -e
 #[ "$UID" -eq 0 ] || gksudo bash "$0" "$@"
 
 # Ask user for configurations
-echo -e "\e[0mYou can control some of the tasks to be done.\nWould you like to install Teamviewer? If yes, type 'y', otherwise 'n':\e[32m"
+echo -e "\e[0mYou can control some of the tasks to be done.\nWould you like to install Java? If yes, type 'y', otherwise 'n':\e[32m"
+read usersettingjava
+
+echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
 read usersettingteamviewer
 
-echo -e "\e[0mWould you like to install Anydesk? If yes, type 'y', otherwise 'n':\e[32m"
+echo -e "\e[0mWould you like to install Anydesk for remote support? If yes, type 'y', otherwise 'n':\e[32m"
 read usersettinganydesk
+
+echo -e "\e[0mWould you like to install the browser Chromium (=Chrome without Google)? If yes, type 'y', otherwise 'n':\e[32m"
+read usersettingchromium
+
+echo -e "\e[0mWould you like to install the password manager KeePass? If yes, type 'y', otherwise 'n':\e[32m"
+read usersettingkeepass
+
+echo -e "\e[0mWould you like to install the clipboard manager copyq? If yes, type 'y', otherwise 'n':\e[32m"
+read usersettingcopyq
 
 echo -e "\e[0mWould you like to install Firefox add-ons for better privacy? If yes, type 'y', otherwise 'n':\e[32m"
 read usersettingfirefoxaddon
@@ -88,19 +100,13 @@ echo -e "----> Update of installed apps \n\e[32m"
 
 sudo apt upgrade -y
 
+if [[ $usersettingjava == y ]]; then
+  echo -e "\e[0m\n\n**************************************************"
+  echo -e "----> Install/Update Java\n\e[32m"
 
-echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install/Update Java\n\e[32m"
-
-sudo apt install -y default-jre
-# test mit java -version
-
-
-echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install/Update Shutter\n\e[32m"
-
-sudo apt install -y shutter
-
+  sudo apt install -y default-jre
+  # test mit java -version
+fi
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update curl \n\e[32m"
@@ -140,26 +146,28 @@ if [[ $usersettinganydesk == y ]]; then
    sudo apt install -fy
 fi
 
+# CopyQ
+if [[ $usersettingcopyq == y ]]; then
+  echo -e "\e[0m\n\n**************************************************"
+  echo -e "----> Install/Update Clipboard Manager\n\e[32m"
 
-echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install/Update Clipboard Manager\n\e[32m"
-
-sudo add-apt-repository -y ppa:hluk/copyq
-sudo apt update
-sudo apt install -y copyq
-
+  sudo add-apt-repository -y ppa:hluk/copyq
+  sudo apt update
+  sudo apt install -y copyq
+fi
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update Firefox\n\e[32m"
 
 sudo apt install -y firefox
 
+# Chromium
+if [[ $usersettingchromium == y ]]; then
+  echo -e "\e[0m\n\n**************************************************"
+  echo -e "----> Install/Update Chromium\n\e[32m"
 
-echo -e "\e[0m\n\n**************************************************"
-echo -e "----> Install/Update Chromium\n\e[32m"
-
-sudo apt install -y chromium-browser
-
+  sudo apt install -y chromium-browser
+fi
 
 # Update Firefox Add-Ons
 if [[ $usersettingfirefoxaddon == y ]]; then
@@ -266,7 +274,12 @@ fi
 # https://wiki.ubuntuusers.de/DVD-Wiedergabe/
 #sudo apt install -y libdvdcss2 libdvdread4 libdvdnav4 libdvd-pkg && sudo dpkg-reconfigure libdvd-pkg
 
+if [[ $usersettingkeepass == y ]]; then
+  echo -e "\e[0m\n\n**************************************************"
+  echo -e "----> Install/Update KeePass\n\e[32m"
 
+  sudo apt install keepass2
+fi
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update Preload\n\e[32m"
