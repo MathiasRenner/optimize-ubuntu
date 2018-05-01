@@ -25,33 +25,40 @@ set -e
 #[ "$UID" -eq 0 ] || gksudo bash "$0" "$@"
 
 # Ask user for configurations
-echo -e "\e[0mYou can control some of the tasks to be done.\nWould you like to install Java? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingjava
+echo -e "\e[0mWould you like to specify which tasks this software shall execute? If yes, type 'y', otherwise 'n':\e[32m"
+read usersettingcustomize
 
-echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingteamviewer
+if [[ $usersettingcustomize == y ]]; then
 
-echo -e "\e[0mWould you like to install Anydesk for remote support? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettinganydesk
+  echo -e "\e[0mThere are about ten tasks you now can decide about.\e[32m"
 
-echo -e "\e[0mWould you like to install the browser Chromium (=Chrome without Google)? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingchromium
+  echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingjava
 
-echo -e "\e[0mWould you like to install the password manager KeePass? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingkeepass
+  echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingteamviewer
 
-echo -e "\e[0mWould you like to install the clipboard manager copyq? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingcopyq
+  echo -e "\e[0mWould you like to install Anydesk for remote support? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettinganydesk
 
-echo -e "\e[0mWould you like to install Firefox add-ons for better privacy? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingfirefoxaddon
+  echo -e "\e[0mWould you like to install the browser Chromium (=Chrome without Google)? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingchromium
 
-echo -e "\e[0mWould you like to harden Firefox for better security and privacy? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingfirefoxharden
+  echo -e "\e[0mWould you like to install the password manager KeePass? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingkeepass
 
-echo -e "\e[0mWould you like to disable Bluetooth and remove all software components for bluetooth? If yes, type 'y', otherwise 'n':\e[32m"
-read usersettingbluetooth
+  echo -e "\e[0mWould you like to install the clipboard manager copyq? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingcopyq
 
+  echo -e "\e[0mWould you like to install Firefox add-ons for better privacy? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingfirefoxaddon
+
+  echo -e "\e[0mWould you like to harden Firefox for better security and privacy? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingfirefoxharden
+
+  echo -e "\e[0mWould you like to disable Bluetooth and remove all software components for bluetooth? If yes, type 'y', otherwise 'n':\e[32m"
+  read usersettingbluetooth
+fi
 
 echo -e "\e[0m\n#################################################"
 echo -e "### Software Cleanup (automated)"
