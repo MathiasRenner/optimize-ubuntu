@@ -32,7 +32,7 @@ if [[ $usersettingcustomize == y ]]; then
 
   echo -e "\e[0mThere are about ten tasks you now can decide about.\e[32m"
 
-  echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
+  echo -e "\e[0mWould you like to install Java for remote support? If yes, type 'y', otherwise 'n':\e[32m"
   read usersettingjava
 
   echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
