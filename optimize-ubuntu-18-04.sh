@@ -278,7 +278,7 @@ if [[ $usersettingkeepass == y ]]; then
   echo -e "\e[0m\n\n**************************************************"
   echo -e "----> Install/Update KeePass\n\e[32m"
 
-  sudo apt install keepass2
+  sudo apt install -y keepass2
 fi
 
 echo -e "\e[0m\n\n**************************************************"
