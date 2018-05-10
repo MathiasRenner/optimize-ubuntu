@@ -38,8 +38,11 @@ For Ubuntu **<= 17.10**, run this command:
 sudo apt install -y curl && curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
 ```
 
+## Support this project
 
+If you want this project to get better, support me with a few cents:
 
+<a href="https://liberapay.com/Bitleaf/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 ## License
 
