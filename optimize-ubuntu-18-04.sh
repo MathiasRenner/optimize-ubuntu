@@ -88,7 +88,7 @@ echo -e "----> Remove error reporting daemon\n\e[32m"
 
 # https://forum.ubuntuusers.de/topic/datenschutz-und-ubuntu/
 # This also disable error reporting in system settings
-sudo apt remove -y whoopsie
+sudo apt remove -y whoopsie apport apport-gtk
 
 
 echo -e "\e[0m\n\n#################################################"
@@ -126,7 +126,7 @@ if [[ $usersettingteamviewer == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
    echo -e "----> Install/Update TeamViewer\n\e[32m"
 
-   # Fixes dependency error 
+   # Fixes dependency error
    sudo apt install -fy
 
    # Make this command always true to not stop the script
@@ -134,7 +134,7 @@ if [[ $usersettingteamviewer == y ]]; then
    curl https://download.teamviewer.com/download/teamviewer_i386.deb | awk  -F '[<>]' -F '["]' ' {print $2}' | xargs curl -o /tmp/teamviewer.deb # parse download page and download .deb file
    sudo dpkg -i /tmp/teamviewer.deb || true
 
-   # Fixes dependency error 
+   # Fixes dependency error
    sudo apt install -fy
 fi
 
@@ -143,13 +143,13 @@ if [[ $usersettinganydesk == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
    echo -e "----> Install/Update AnyDesk\n\e[32m"
 
-   sudo curl https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb -o /tmp/anydesk.deb 
+   sudo curl https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb -o /tmp/anydesk.deb
 
    # Make this command always true to not stop the script
    #   error will be resolved with 'install -f' afterwards
-   sudo dpkg -i /tmp/anydesk.deb || true # install deb package 
+   sudo dpkg -i /tmp/anydesk.deb || true # install deb package
 
-   # Fixes dependency error 
+   # Fixes dependency error
    sudo apt install -fy
 fi
 
@@ -262,7 +262,7 @@ if [[ $usersettingfirefoxharden == y ]]; then
       echo "User.js exists, deleting it..."
       rm user.js # delete existing user.js, to be updated next
    fi
-  
+
    # Downloading user.js
    wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
 
@@ -272,7 +272,7 @@ if [[ $usersettingfirefoxharden == y ]]; then
    # Don't use private browsing mode all the time
    sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
 fi
-  
+
 
 #echo -e "\e[0m\n\n**************************************************"
 #echo -e "----> Installiere libraries to play DVDs\n\e[32m"
@@ -310,7 +310,7 @@ sudo apt install -y compizconfig-settings-manager
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update GNOME tweak tool\n\e[32m"
-sudo apt-get install -y gnome-tweak-tool 
+sudo apt-get install -y gnome-tweak-tool
 # open via search for "tweaks"
 # Desktop -> don't show icons
 # Top bar -> Application menu -> set off
@@ -449,7 +449,7 @@ if [[ $usersettingbluetooth == y ]]; then
    sudo modprobe -r btusb
    echo "blacklist btusb #disable bluetooth" >> /etc/modprobe.d/blacklist.conf
    sudo apt remove -y bluez* bluetooth
-   
+
 fi
 
 echo -e "\e[0m\n\n**************************************************"
