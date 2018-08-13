@@ -49,6 +49,14 @@ echo -e "----> Remove online search in dash (u.a. Amazon)\n\e[32m"
 sudo apt remove -y unity-webapps-common
 
 
+echo -e "\e[0m\n\n**************************************************"
+echo -e "----> Remove error reporting daemon\n\e[32m"
+
+# https://forum.ubuntuusers.de/topic/datenschutz-und-ubuntu/
+# This also disable error reporting in system settings
+sudo apt remove -y whoopsie apport apport-gtk
+
+
 echo -e "\e[0m\n\n#################################################"
 echo -e "### Software Update (automated)"
 echo -e "#################################################\e[32m"
