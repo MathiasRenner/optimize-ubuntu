@@ -1,6 +1,6 @@
 # Optimize Ubuntu Desktop Edition
 
-This project ships a script that optimizes Ubuntu against the following goals:
+This project provides a script that optimizes Ubuntu in regard to the following goals:
 
   - Maximize usability by installing apps that most users require regularly
   - Maximize security and the user's privacy
@@ -8,13 +8,12 @@ This project ships a script that optimizes Ubuntu against the following goals:
 
 Thereby, the **usability of Ubuntu is NOT reduced.**
 
-These goals are based on the values of [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de). See also this [blog post](https://bitleaf.de/2018/04/27/optimize-ubuntu-18-04-for-privacy-security-and-usability/) about the motivation about this tool. 
+These goals are based on the values of [Bitleaf – Sustainable IT Solutions](https://www.bitleaf.de). See also this [blog post](https://bitleaf.de/2018/04/27/optimize-ubuntu-18-04-for-privacy-security-and-usability/) about the motivation behind this tool.
 
-The script is recommended to use on a regular base. It's configured to install **and** update your machine.
+I recommend this script for **Linux beginners**. Also, I recommend using the script on a regular basis. It's designed to install **and** update your machine.
 
-
-## What exactly does it do?
-- Removes unnecessary software, i.e. needless dependencies, old kernels
+## What the script does
+- Removes unnecessary software, i.e. useless dependencies, old kernels
 - Updates your installed software
 - Installs useful tools, i.e. Java, Teamviewer, a clipboard manager, chromium browser
 - Increases privacy protection, i.e. removes amazon, restricts Ubuntu to send reports to Canonical, Inc.
@@ -25,15 +24,15 @@ The script takes about **5 Minutes** in total to finish all tasks.
 
 ## How to use
 
-For Ubuntu **18.04**, run the following commands: 
+For Ubuntu **18.04**, run the following commands:
 
 ```
-sudo apt install -y curl 
+sudo apt install -y curl
 sudo curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-18-04.sh -o /tmp/optim.sh
 sudo bash /tmp/optim.sh
 ```
 
-For Ubuntu **<= 17.10**, run this command: 
+For Ubuntu **<= 17.10**, run this command:
 ```
 sudo apt install -y curl && curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
 ```
