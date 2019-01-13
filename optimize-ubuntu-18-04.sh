@@ -32,9 +32,6 @@ if [[ $usersettingcustomize == y ]]; then
 
   echo -e "\e[0mThere are about ten tasks you now can decide about.\e[32m"
 
-  echo -e "\e[0mWould you like to install Java for remote support? If yes, type 'y', otherwise 'n':\e[32m"
-  read usersettingjava
-
   echo -e "\e[0mWould you like to install Teamviewer for remote support? If yes, type 'y', otherwise 'n':\e[32m"
   read usersettingteamviewer
 
@@ -107,13 +104,6 @@ echo -e "----> Update of installed apps \n\e[32m"
 
 sudo apt upgrade -y
 
-if [[ $usersettingjava == y ]]; then
-  echo -e "\e[0m\n\n**************************************************"
-  echo -e "----> Install/Update Java\n\e[32m"
-
-  sudo apt install -y default-jre
-  # test mit java -version
-fi
 
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update curl \n\e[32m"
