@@ -85,7 +85,7 @@ echo -e "----> Remove error reporting daemon\n\e[32m"
 
 # https://forum.ubuntuusers.de/topic/datenschutz-und-ubuntu/
 # This also disable error reporting in system settings
-sudo apt remove -y whoopsie apport apport-gtk
+sudo apt remove -y whoopsie apport apport-gtk ubuntu-report ubuntu-web-launchers
 
 
 echo -e "\e[0m\n\n#################################################"
@@ -427,6 +427,13 @@ sudo apt install unattended-upgrades
 #  /etc/init.d/unattended-upgrades restart
 
 
+#
+
+echo -e "\e[0m\n\n**************************************************"
+echo -e "----> Harden against attacs via TMP files\n\e[32m"
+    # see https://www.privacy-handbuch.de/handbuch_90b.htm
+    sudo apt install libpam-tmpdir
+echo "Done."
 
 
 # Handle Bluetooth
