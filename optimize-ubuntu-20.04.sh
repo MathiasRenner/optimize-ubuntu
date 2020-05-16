@@ -104,6 +104,12 @@ echo -e "----> Install/Update curl \n\e[32m"
 sudo apt install -y curl
 
 
+echo -e "\e[0m\n\n**************************************************"
+echo -e "----> Install/Update VLC Player \n\e[32m"
+
+sudo apt install -y vlc
+
+
 # Teamviewer
 if [[ $usersettingteamviewer == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
@@ -285,7 +291,15 @@ sudo apt install -y preload
 echo -e "\e[0m\n\n**************************************************"
 echo -e "----> Install/Update FSlint\n\e[32m"
 
-sudo apt install -y fslint
+#sudo apt install -y fslint
+# As of 2020-05-17, fslint has old dependencies is therefore not included in packages. Installing manually...
+# https://askubuntu.com/questions/1233710/where-is-fslint-duplicate-file-finder-for-ubuntu-20-04
+
+sudo curl http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-6_amd64.deb -o /tmp/fslint-1.deb
+sudo curl http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-glade2_2.24.0-6_amd64.deb -o /tmp/fslint-2.deb
+sudo curl http://archive.ubuntu.com/ubuntu/pool/universe/f/fslint/fslint_2.46-1_all.deb -o /tmp/fslint-3.deb
+
+sudo apt install /tmp/fslint*.deb
 
 
 echo -e "\e[0m\n\n**************************************************"
