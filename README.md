@@ -26,7 +26,7 @@ The script takes about **5 Minutes** in total to finish all tasks.
 Run the following commands:
 
 ```
-sudo apt install -y curl lsb_release #Install dependencies
+sudo apt install -y curl #Install dependency
 sudo curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-$(lsb_release -r -s).sh -o /tmp/optim.sh
 sudo bash /tmp/optim.sh
 ```

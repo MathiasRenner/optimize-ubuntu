@@ -78,7 +78,7 @@ echo -e "----> Remove error reporting daemon\n\e[32m"
 
 # https://forum.ubuntuusers.de/topic/datenschutz-und-ubuntu/
 # This also disable error reporting in system settings
-sudo apt remove -y whoopsie apport apport-gtk ubuntu-report ubuntu-web-launchers
+sudo apt remove -y whoopsie apport apport-gtk ubuntu-report
 
 
 echo -e "\e[0m\n\n#################################################"
