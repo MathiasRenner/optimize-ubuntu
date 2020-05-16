@@ -110,6 +110,12 @@ echo -e "----> Install/Update VLC Player \n\e[32m"
 sudo apt install -y vlc
 
 
+echo -e "\e[0m\n\n**************************************************"
+echo -e "----> Install/Update htop \n\e[32m"
+
+sudo apt install -y htop
+
+
 # Teamviewer
 if [[ $usersettingteamviewer == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
@@ -203,17 +209,8 @@ if [[ $usersettingfirefoxaddon == y ]]; then
      cp /tmp/https-everywhere@eff.org.xpi extensions/
    fi
 
-   # Install CanvasBlocker
-   if [ -f /tmp/CanvasBlocker@kkapsner.de.xpi ]; then
-      echo -e "\nCanvasBlocker install file already exists. Skipping..."
-   else
-     wget https://addons.mozilla.org/firefox/downloads/latest/canvasblocker/addon-534930-latest.xpi
-     mv addon-534930-latest.xpi /tmp/CanvasBlocker@kkapsner.de.xpi
-     cd ~/.mozilla/firefox/
-     cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
-     mkdir -p extensions
-     cp /tmp/CanvasBlocker@kkapsner.de.xpi extensions/
-   fi
+# Install CanvasBlocker - removed - blocks too many functions in websites
+
 
    # Install privacy-settings
    if [ -f /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi ]; then
