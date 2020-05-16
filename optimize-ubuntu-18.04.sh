@@ -2,7 +2,7 @@
 
 # This software is licensed unter the GPLv3.
 #
-# Copyright (C) 2017 Mathias Renner
+# Copyright (C) 2018 Mathias Renner
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -133,7 +133,10 @@ if [[ $usersettinganydesk == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
    echo -e "----> Install/Update AnyDesk\n\e[32m"
 
-   sudo curl https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb -o /tmp/anydesk.deb
+   #sudo curl https://download.anydesk.com/linux/anydesk_2.9.5-1_amd64.deb -o /tmp/anydesk.deb
+   # Download latest version of website
+   DEBNAME=$(curl -s https://download.anydesk.com/linux/ | grep -m 1 'a href="./anydesk' | awk -F[\>] '{print $2}' | awk -F[\<] '{print $1}')
+   curl -s https://download.anydesk.com/linux/$DEBNAME -o /tmp/anydesk.deb
 
    # Make this command always true to not stop the script
    #   error will be resolved with 'install -f' afterwards

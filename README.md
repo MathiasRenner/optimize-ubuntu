@@ -21,21 +21,16 @@ I recommend this script for **Linux beginners**. Also, I recommend using the scr
 
 The script takes about **5 Minutes** in total to finish all tasks.
 
-
 ## How to use
 
-For Ubuntu **18.04**, run the following commands:
+Run the following commands:
 
 ```
-sudo apt install -y curl
-sudo curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-18-04.sh -o /tmp/optim.sh
+sudo apt install -y curl lsb_release #Install dependencies
+sudo curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-$(lsb_release -r -s).sh -o /tmp/optim.sh
 sudo bash /tmp/optim.sh
 ```
 
-For Ubuntu **<= 17.10**, run this command:
-```
-sudo apt install -y curl && curl -s https://raw.githubusercontent.com/bitleaf/optimize-ubuntu/master/optimize-ubuntu-16-04.sh | bash
-```
 
 ## Support this project
 
