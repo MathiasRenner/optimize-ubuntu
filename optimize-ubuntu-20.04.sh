@@ -253,22 +253,28 @@ if [[ $usersettingfirefoxharden == y ]]; then
    echo -e "\e[0m\n\n**************************************************"
    echo -e "----> Harden Firefox \n\e[32m"
 
-   cd ~/.mozilla/firefox/
-   cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
+   ALLUSERSHOMEDIR=$(ls -d /home/* | awk 'NR > 1')
+   #echo $ALLUSERSHOMEDIR
 
-   if [ -f user.js ]; then
-      echo "User.js exists, deleting it..."
-      rm user.js # delete existing user.js, to be updated next
-   fi
+   for userhomedir in $ALLUSERSHOMEDIR; do
 
-   # Downloading user.js
-   wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
+     cd $userhomedir/.mozilla/firefox/
+     cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
 
-   # Enable keyword search in browser URL
-   sed -ie 's/user_pref("keyword.enabled",                                    false);/user_pref("keyword.enabled",                                    true);/g' user.js
+     if [ -f user.js ]; then
+        echo "User.js exists, deleting it..."
+        rm user.js # delete existing user.js, to be updated next
+     fi
 
-   # Don't use private browsing mode all the time
-   sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
+     # Downloading user.js
+     wget https://raw.githubusercontent.com/pyllyukko/user.js/master/user.js # get hardening config file
+
+     # Enable keyword search in browser URL
+     sed -ie 's/user_pref("keyword.enabled",					false);/user_pref("keyword.enabled",					true);/g' user.js
+
+     # Don't use private browsing mode all the time
+     sed -ie 's/user_pref("browser.privatebrowsing.autostart",                  true);/user_pref("browser.privatebrowsing.autostart",                  false);/g' user.js
+   done
 fi
 
 
