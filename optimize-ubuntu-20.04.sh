@@ -182,6 +182,9 @@ if [[ $usersettingfirefoxaddon == y ]]; then
    echo -e "----> Install/Update Firefox Add-Ons\n\e[32m"
    # Ideas from: https://www.kuketz-blog.de/jondofox-profil-nutzung-nicht-mehr-empfehlenswert/
 
+   #Install wget as download tool, because curl is not working as expected
+   sudo apt install -y wget
+
    # Installing for all users
    ALLUSERSHOMEDIR=$(ls -d /home/* | awk 'NR > 1')
    #echo $ALLUSERSHOMEDIR
@@ -194,22 +197,22 @@ if [[ $usersettingfirefoxaddon == y ]]; then
 
    # Install uBlock
    if [ -f /tmp/uBlock0@raymondhill.net.xpi ]; then
-      echo -e "\nuBlock install file already exists. Skipping..."
+      echo -e "\nuBlock install file already exists. Skipping Download."
    else
-     sudo curl https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-607454-latest.xpi -o /tmp/uBlock0@raymondhill.net.xpi
+     sudo wget -O /tmp/uBlock0@raymondhill.net.xpi https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/addon-607454-latest.xpi
    fi
-     cd ~/.mozilla/firefox/
+     cd $userhomedir/.mozilla/firefox/
      cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
      mkdir -p extensions/
      cp /tmp/uBlock0@raymondhill.net.xpi extensions/
 
    # Install https-everywhere
    if [ -f /tmp/https-everywhere@eff.org.xpi ]; then
-      echo -e "\nHttps-everywhere install file already exists. Skipping..."
+      echo -e "\nHttps-everywhere install file already exists. Skipping Download."
    else
-     sudo curl https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/addon-229918-latest.xpi -o /tmp/https-everywhere@eff.org.xpi
+     sudo wget -O /tmp/https-everywhere@eff.org.xpi https://addons.mozilla.org/firefox/downloads/latest/https-everywhere/addon-229918-latest.xpi
    fi
-     cd ~/.mozilla/firefox/
+     cd $userhomedir/.mozilla/firefox/
      cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
      mkdir -p extensions/
      cp /tmp/https-everywhere@eff.org.xpi extensions/
@@ -218,22 +221,22 @@ if [[ $usersettingfirefoxaddon == y ]]; then
 
    # Install privacy-settings
    if [ -f /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi ]; then
-      echo -e "\nPrivacy-settings install file already exists. Skipping..."
+      echo -e "\nPrivacy-settings install file already exists. Skipping Download."
    else
-     sudo curl https://addons.mozilla.org/firefox/downloads/latest/privacy-settings/addon-627512-latest.xpi -o /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi
+     sudo wget -O /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi https://addons.mozilla.org/firefox/downloads/latest/privacy-settings/addon-627512-latest.xpi
    fi
-     cd ~/.mozilla/firefox/
+     cd $userhomedir/.mozilla/firefox/
      cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
      mkdir -p extensions
      cp /tmp/jid1-CKHySAadH4nL6Q@jetpack.xpi extensions/
 
    # Install Privacy Badger
    if [ -f /tmp/jid1-MnnxcxisBPnSXQ@jetpack.xpi ]; then
-      echo -e "\nPrivacy Badger install file already exists. Skipping..."
+      echo -e "\nPrivacy Badger install file already exists. Skipping Download."
    else
-     sudo curl https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/addon-506646-latest.xpi -o /tmp/jid1-MnnxcxisBPnSXQ@jetpack.xpi
+     sudo wget -O /tmp/jid1-MnnxcxisBPnSXQ@jetpack.xpi https://addons.mozilla.org/firefox/downloads/latest/privacy-badger17/addon-506646-latest.xpi
    fi
-     cd ~/.mozilla/firefox/
+     cd $userhomedir/.mozilla/firefox/
      cd "$(ls -la --sort=time | grep -i default | awk -F ' ' '{print $9}' | head -n1)" # cd into most recently used profile
      mkdir -p extensions
      cp /tmp/jid1-MnnxcxisBPnSXQ@jetpack.xpi extensions/
